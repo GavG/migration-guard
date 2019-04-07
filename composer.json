@@ -1,0 +1,11 @@
+{
+    "name": "gavingration/migration-watchman",
+    "description": "Alerting you of alterations to your Laravel Migrations.",
+    "authors": [
+        {
+            "name": "GavG",
+            "email": "gavg.apps@gmail.com"
+        }
+    ],
+    "require": {}
+}
