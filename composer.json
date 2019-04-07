@@ -1,6 +1,6 @@
 {
     "name": "gavingration/migration-watchman",
-    "description": "Alerting you of alterations to your Laravel Migrations.",
+    "description": "Keeping watch of your Laravel Migrations",
     "authors": [
         {
             "name": "GavG",
