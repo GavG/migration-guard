@@ -7,10 +7,13 @@ use MigrationWatchman\WatchmanDatabaseMigrationRepository;
 class MigrationWatchmanServiceProvider extends MigrationServiceProvider
 {
 
+  public function boot()
+  {
+    $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+  }
+
   protected function registerRepository()
   {
-      //Publish and run our migration to add the hash column first
-
       $this->app->singleton('migration.watchman_repository', function ($app) {
           $table = $app['config']['database.migrations'];
           return new WatchmanDatabaseMigrationRepository($app['db'], $table);

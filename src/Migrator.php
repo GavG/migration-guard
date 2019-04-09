@@ -5,6 +5,11 @@ use Illuminate\Database\Migrations\Migrator;
 class WatchmanMigrator extends Migrator
 {
 
+  protected function fileHash($file)
+  {
+    return hash_file('adler32', $file);
+  }
+
   /**
    * Run "up" a migration instance.
    *
@@ -32,7 +37,7 @@ class WatchmanMigrator extends Migrator
 
       //TODO: open file from migrations dir and get hash as $hash
 
-      $this->repository->log($name, $batch, $hash);
+      $this->repository->log($name, $batch, $this->fileHash($file));
       $this->note("<info>Migrated:</info>  {$name}");
   }
 }
