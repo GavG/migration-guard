@@ -2,11 +2,11 @@
 
 namespace GavG\MigrationGaurd;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\MigrationServiceProvider as DefaultMigrationServiceProvider;
 use GavG\MigrationGaurd\Migrator;
 use GavG\MigrationGaurd\DatabaseMigrationRepository;
 
-class MigrationGaurdServiceProvider extends ServiceProvider
+class MigrationGaurdServiceProvider extends DefaultMigrationServiceProvider
 {
 
   public function boot()
