@@ -2,15 +2,16 @@
 
 namespace GavG\MigrationGaurd;
 
-use Illuminate\Database\MigrationServiceProvider as DefaultMigrationServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use GavG\MigrationGaurd\Migrator;
 use GavG\MigrationGaurd\DatabaseMigrationRepository;
 
-class MigrationServiceProvider extends DefaultMigrationServiceProvider
+class MigrationGaurdServiceProvider extends ServiceProvider
 {
 
   public function boot()
   {
+    print('boot');
     $this->loadMigrationsFrom(__DIR__.'/database/migrations');
   }
 

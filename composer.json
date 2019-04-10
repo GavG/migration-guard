@@ -19,7 +19,7 @@
       "extra": {
           "laravel": {
               "providers": [
-                  "GavG\\MigrationGaurd\\MigrationServiceProvider"
+                  "GavG\\MigrationGaurd\\MigrationGaurdServiceProvider"
               ]
           }
       }
