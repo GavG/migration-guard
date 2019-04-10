@@ -1,8 +1,10 @@
 <?php
 
+namespace GavG\MigrationGaurd;
+
 use Illuminate\Database\Migrations\DatabaseMigrationRepository;
 
-class WatchmanDatabaseMigrationRepository extends DatabaseMigrationRepository
+class MigrationGaurdDatabaseMigrationRepository extends DatabaseMigrationRepository
 {
   /**
   * Log that a migration was run.

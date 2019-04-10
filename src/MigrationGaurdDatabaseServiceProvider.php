@@ -1,5 +1,7 @@
 <?php
 
+namespace GavG\MigrationGaurd;
+
 use Illuminate\Database\MigrationServiceProvider;
 use MigrationWatchman\WatchmanMigrator;
 use MigrationWatchman\WatchmanDatabaseMigrationRepository;

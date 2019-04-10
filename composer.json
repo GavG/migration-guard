@@ -1,5 +1,5 @@
 {
-    "name": "gavg/migration-watchman",
+    "name": "gavg/migration-gaurd",
     "version": "dev-master",
     "description": "Keeping watch of your Laravel Migrations",
     "authors": [
@@ -11,5 +11,13 @@
     "require": {
       "php": "^7.1",
       "illuminate/database": "*"
-    }
+    },
+    "autoload": {
+      "psr-4": {
+          "Spatie\\Permission\\": "src"
+      },
+      "files": [
+          "src/helpers.php"
+      ]
+  },
 }

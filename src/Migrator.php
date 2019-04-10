@@ -1,8 +1,10 @@
 <?php
 
+namespace GavG\MigrationGaurd;
+
 use Illuminate\Database\Migrations\Migrator;
 
-class WatchmanMigrator extends Migrator
+class MigrationGaurdMigrator extends Migrator
 {
 
   protected function fileHash($file)
