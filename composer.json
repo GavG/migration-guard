@@ -1,5 +1,6 @@
 {
     "name": "gavg/migration-watchman",
+    "version": "dev-master",
     "description": "Keeping watch of your Laravel Migrations",
     "authors": [
         {
