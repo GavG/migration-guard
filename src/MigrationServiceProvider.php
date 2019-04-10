@@ -25,7 +25,7 @@ class MigrationServiceProvider extends DefaultMigrationServiceProvider
   protected function registerMigrator()
   {
       $this->app->singleton('migrator', function ($app) {
-          $repository = $app['migration.watchman_repository'];
+          $repository = $app['migration.repository'];
           return new Migrator($repository, $app['db'], $app['files']);
       });
   }
