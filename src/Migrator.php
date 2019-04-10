@@ -2,9 +2,9 @@
 
 namespace GavG\MigrationGaurd;
 
-use Illuminate\Database\Migrations\Migrator;
+use Illuminate\Database\Migrations\Migrator as DefaultMigrator;
 
-class MigrationGaurdMigrator extends Migrator
+class Migrator extends DefaultMigrator
 {
 
   protected function fileHash($file)

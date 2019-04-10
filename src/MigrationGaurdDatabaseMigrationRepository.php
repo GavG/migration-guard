@@ -2,9 +2,9 @@
 
 namespace GavG\MigrationGaurd;
 
-use Illuminate\Database\Migrations\DatabaseMigrationRepository;
+use Illuminate\Database\Migrations\DatabaseMigrationRepository as DefaultDatabaseMigrationRepository;
 
-class MigrationGaurdDatabaseMigrationRepository extends DatabaseMigrationRepository
+class DatabaseMigrationRepository extends DefaultDatabaseMigrationRepository
 {
   /**
   * Log that a migration was run.

@@ -2,11 +2,11 @@
 
 namespace GavG\MigrationGaurd;
 
-use Illuminate\Database\MigrationServiceProvider;
-use MigrationWatchman\WatchmanMigrator;
-use MigrationWatchman\WatchmanDatabaseMigrationRepository;
+use Illuminate\Database\MigrationServiceProvider as DefaultMigrationServiceProvider;
+use GavG\MigrationGaurd\Migrator;
+use GavG\MigrationGaurd\DatabaseMigrationRepository;
 
-class MigrationWatchmanServiceProvider extends MigrationServiceProvider
+class MigrationServiceProvider extends DefaultMigrationServiceProvider
 {
 
   public function boot()
@@ -18,7 +18,7 @@ class MigrationWatchmanServiceProvider extends MigrationServiceProvider
   {
       $this->app->singleton('migration.watchman_repository', function ($app) {
           $table = $app['config']['database.migrations'];
-          return new WatchmanDatabaseMigrationRepository($app['db'], $table);
+          return new DatabaseMigrationRepository($app['db'], $table);
       });
   }
 
@@ -26,7 +26,7 @@ class MigrationWatchmanServiceProvider extends MigrationServiceProvider
   {
       $this->app->singleton('migrator', function ($app) {
           $repository = $app['migration.watchman_repository'];
-          return new WatchmanMigrator($repository, $app['db'], $app['files']);
+          return new Migrator($repository, $app['db'], $app['files']);
       });
   }
 }

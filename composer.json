@@ -14,10 +14,14 @@
     },
     "autoload": {
       "psr-4": {
-          "Spatie\\Permission\\": "src"
+          "GavG\\MigrationGaurd\\": "src"
       },
-      "files": [
-          "src/helpers.php"
-      ]
-  },
+      "extra": {
+          "laravel": {
+              "providers": [
+                  "GavG\\MigrationGaurd\\MigrationGaurdMigrationServiceProvider"
+              ]
+          }
+      }
+  }
 }
