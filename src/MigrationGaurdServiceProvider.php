@@ -19,7 +19,7 @@ class MigrationGaurdServiceProvider extends DefaultMigrationServiceProvider
 
   protected function registerRepository()
   {
-      $this->app->singleton('migration.watchman_repository', function ($app) {
+      $this->app->singleton('migration.repository', function ($app) {
           $table = $app['config']['database.migrations'];
           return new DatabaseMigrationRepository($app['db'], $table);
       });
