@@ -12,4 +12,17 @@ class DatabaseMigrationRepository extends DefaultDatabaseMigrationRepository
      $record = ['migration' => $file, 'batch' => $batch, 'hash' => $hash];
      $this->table()->insert($record);
   }
+  
+  public function getRows()
+  {
+    return $this->table()
+               ->orderBy('batch', 'asc')
+               ->orderBy('migration', 'asc')
+               ->get();
+  }
+  
+  public function update($id, $data)
+  {
+    $this->table()->where('id', $id)->update($data);
+  }
 }
