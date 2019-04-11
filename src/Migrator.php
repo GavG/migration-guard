@@ -15,21 +15,23 @@ class Migrator extends DefaultMigrator
   protected function processRan($files)
   {
     foreach ($this->repository->getRows() as $migration) {
+      if(array_key_exists('hash', $migration)){
       
-      if(!in_array($migration->migration, array_keys($files))){
-        $this->note("<error>Missing Migration File</error> {$migration->migration}");
-        die();
-      }
-      
-      $file = $files[$migration->migration];
-      
-      if($migration->hash){
-        if($migration->hash != $this->fileHash($file)){
-          $this->note("<error>Migration File Has Changed</error> {$migration->migration}");
+        if(!in_array($migration->migration, array_keys($files))){
+          $this->note("<error>Missing Migration File</error> {$migration->migration}");
           die();
         }
-      } else {
-        $this->repository->update($migration->id, ['hash' => $this->fileHash($file)]);
+      
+        $file = $files[$migration->migration];
+        
+        if($migration->hash){
+          if($migration->hash != $this->fileHash($file)){
+            $this->note("<error>Migration File Has Changed</error> {$migration->migration}");
+            die();
+          }
+        } else {
+          $this->repository->update($migration->id, ['hash' => $this->fileHash($file)]);
+        }
       }
     }
   }
