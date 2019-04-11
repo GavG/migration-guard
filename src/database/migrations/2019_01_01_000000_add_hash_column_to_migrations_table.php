@@ -10,7 +10,7 @@ class AddHashColumnToMigrationsTable extends Migration
     public function up()
     {
       Schema::table('migrations', function($table) {
-        $table->string('hash')->nullable();
+        $table->char('hash', 8)->nullable();
       });
     }
 
