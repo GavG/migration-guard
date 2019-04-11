@@ -1,17 +1,17 @@
 <?php
 
-namespace GavG\MigrationGaurd;
+namespace GavG\MigrationGuard;
 
 use Illuminate\Database\MigrationServiceProvider as DefaultMigrationServiceProvider;
-use GavG\MigrationGaurd\Migrator;
-use GavG\MigrationGaurd\DatabaseMigrationRepository;
+use GavG\MigrationGuard\Migrator;
+use GavG\MigrationGuard\DatabaseMigrationRepository;
 
-class MigrationGaurdServiceProvider extends DefaultMigrationServiceProvider
+class MigrationGuardServiceProvider extends DefaultMigrationServiceProvider
 {
 
   public function boot()
   {
-    print("\nBooting MigrationGaurdServiceProvider\n");
+    print("\nBooting MigrationGuardServiceProvider\n");
     $this->loadMigrationsFrom(__DIR__.'/database/migrations');
     $this->registerRepository();
     $this->registerMigrator();

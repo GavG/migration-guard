@@ -1,6 +1,6 @@
 <?php
 
-namespace GavG\MigrationGaurd;
+namespace GavG\MigrationGuard;
 
 use Illuminate\Database\Migrations\Migrator as DefaultMigrator;
 

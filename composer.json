@@ -1,5 +1,5 @@
 {
-    "name": "gavg/migration-gaurd",
+    "name": "gavg/migration-guard",
     "version": "dev-master",
     "description": "Keeping watch of your Laravel Migrations",
     "authors": [
@@ -14,13 +14,13 @@
     },
     "autoload": {
       "psr-4": {
-          "GavG\\MigrationGaurd\\": "src"
+          "GavG\\MigrationGuard\\": "src"
       }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "GavG\\MigrationGaurd\\MigrationGaurdServiceProvider"
+                "GavG\\MigrationGuard\\MigrationGuardServiceProvider"
             ]
         }
     }
