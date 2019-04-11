@@ -11,7 +11,6 @@ class MigrationGuardServiceProvider extends DefaultMigrationServiceProvider
 
   public function boot()
   {
-    print("\nBooting MigrationGuardServiceProvider\n");
     $this->loadMigrationsFrom(__DIR__.'/database/migrations');
     $this->registerRepository();
     $this->registerMigrator();
