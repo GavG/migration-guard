@@ -15,13 +15,13 @@
     "autoload": {
       "psr-4": {
           "GavG\\MigrationGaurd\\": "src"
-      },
-      "extra": {
-          "laravel": {
-              "providers": [
-                  "GavG\\MigrationGaurd\\MigrationGaurdServiceProvider"
-              ]
-          }
       }
-  }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GavG\\MigrationGaurd\\MigrationGaurdServiceProvider"
+            ]
+        }
+    }
 }
