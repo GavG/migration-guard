@@ -11,8 +11,10 @@ class MigrationGaurdServiceProvider extends DefaultMigrationServiceProvider
 
   public function boot()
   {
-    print('boot');
+    print("\nBooting MigrationGaurdServiceProvider\n");
     $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+    $this->registerRepository();
+    $this->registerMigrator();
   }
 
   protected function registerRepository()
