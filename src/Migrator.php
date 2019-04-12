@@ -19,20 +19,15 @@ class Migrator extends DefaultMigrator
       
         if(!in_array($migration->migration, array_keys($files))){
           $this->note("<error>Missing Migration File</error> {$migration->migration}");
-          die();
         }
       
         $file = $files[$migration->migration];
         
-        if($migration->hash){
-          if($migration->hash != $this->fileHash($file)){
+        if($migration->hash && $migration->hash != $this->fileHash($file)){
             $this->note("<error>Migration File Has Changed</error> {$migration->migration}");
-            die();
-          }
-        } else {
-          $this->repository->update($migration->id, ['hash' => $this->fileHash($file)]);
         }
-      }
+        
+        $this->repository->update($migration->id, ['hash' => $this->fileHash($file)]);
     }
   }
   
