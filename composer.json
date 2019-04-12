@@ -1,6 +1,5 @@
 {
     "name": "gavg/migration-guard",
-    "version": "1.0",
     "description": "Keeping watch of your Laravel Migrations",
     "license": "MIT",
     "keywords": ["laravel", "migrations"],
