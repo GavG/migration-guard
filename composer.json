@@ -1,7 +1,8 @@
 {
     "name": "gavg/migration-guard",
-    "version": "dev-master",
     "description": "Keeping watch of your Laravel Migrations",
+    "license": "MIT",
+    "keywords": ["laravel", "migrations"],
     "authors": [
         {
             "name": "GavG",
@@ -23,5 +24,6 @@
                 "GavG\\MigrationGuard\\MigrationGuardServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
