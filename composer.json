@@ -15,7 +15,7 @@
     },
     "autoload": {
       "psr-4": {
-          "GavG\\MigrationGuard\\": "src"
+          "GavG\\MigrationGuard\\": "src/"
       }
     },
     "extra": {
