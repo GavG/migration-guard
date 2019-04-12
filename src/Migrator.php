@@ -28,6 +28,7 @@ class Migrator extends DefaultMigrator
         }
         
         $this->repository->update($migration->id, ['hash' => $this->fileHash($file)]);
+      }
     }
   }
   
