@@ -9,15 +9,19 @@ class AddHashColumnToMigrationsTable extends Migration
 
     public function up()
     {
-      Schema::table('migrations', function($table) {
-        $table->char('hash', 8)->nullable();
-      });
+      if (!Schema::hasColumn('migrations', 'hash')){
+        Schema::table('migrations', function($table) {
+          $table->char('hash', 8)->nullable();
+        });
+      }
     }
 
     public function down()
     {
-      Schema::table('migrations', function($table) {
-        $table->dropColumn('hash');
-      });
+      if (Schema::hasColumn('migrations', 'hash')){
+        Schema::table('migrations', function($table) {
+          $table->dropColumn('hash');
+        });
+      }
     }
 }
