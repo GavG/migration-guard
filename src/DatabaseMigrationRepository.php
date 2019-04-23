@@ -9,7 +9,7 @@ class DatabaseMigrationRepository extends DefaultDatabaseMigrationRepository
 
   public function log($file, $batch, $hash = null)
   {
-     $record = ['migration' => $file, 'batch' => $batch, 'hash' => $hash];
+     $record = $hash ? ['migration' => $file, 'batch' => $batch] : ['migration' => $file, 'batch' => $batch, 'hash' => $hash];
      $this->table()->insert($record);
   }
   
